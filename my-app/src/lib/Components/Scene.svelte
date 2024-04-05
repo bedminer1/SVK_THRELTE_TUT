@@ -12,15 +12,20 @@
     })
 </script>
 
+<T.DirectionalLight 
+    position={[0,10,10]}
+    castShadow/>
+
 <T.Mesh 
     rotation.y={rotation}
     position={[0,0,0]}
     scale={$scale}
     on:pointerenter={() => scale.set([2,0.5,2])}
     on:pointerleave={() => scale.set([1,1,1])}
+    castShadow
     >
     <T.BoxGeometry args={[2, 2, 2]}/>
-    <T.MeshBasicMaterial color="green"/>
+    <T.MeshStandardMaterial color="hotpink"/>
 </T.Mesh>
 
 <T.PerspectiveCamera 
@@ -30,3 +35,13 @@
         ref.lookAt(0, 0, 0)
     }}
 />
+
+<T.Mesh
+    receiveShadow
+    rotation.x={- Math.PI / 2}
+    position={[0,-1.2,0]}
+>
+    <T.CircleGeometry args={[3, 60]} />
+    <T.MeshStandardMaterial color="white" />
+</T.Mesh>
+
