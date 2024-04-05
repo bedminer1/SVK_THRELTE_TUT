@@ -18,7 +18,7 @@
     position={[0,10,10]}
     castShadow/>
 
-<T.AmbientLight intensity={0.1} />
+<T.AmbientLight intensity={0.4} />
 
 <Float
   floatIntensity={1}
@@ -33,17 +33,17 @@
         castShadow
         >
         <T.BoxGeometry args={[2, 2, 2]}/>
-        <T.MeshStandardMaterial color="hotpink"/>
+        <T.MeshStandardMaterial color="#379e00"/>
     </T.Mesh>
 </Float>
 
-<T.OrthographicCamera makeDefault zoom={100} position={[5, 6, 5]}>
+<T.OrthographicCamera makeDefault zoom={40} position={[5, 6, 5]}>
 	<OrbitControls
 		on:create={({ ref }) => {
 			ref.minPolarAngle = Math.PI / 4 - 0.9;
 			ref.maxPolarAngle = Math.PI / 4 + 0.3;
 			ref.maxZoom = 390;
-			ref.minZoom = 100;
+			ref.minZoom = 10;
 		}}
 	/>
 </T.OrthographicCamera>
