@@ -3,7 +3,8 @@
     import Scene from '$lib/Components/Scene.svelte'
 </script>
 
-<Canvas>
-    <Scene />
-</Canvas>
-<p>hi</p>
+<main class="relative my-10 w-full h-[400px] md:h-[700px] border-2 drop-shadow-xl border-dashed rounded-xl">
+    <Canvas>
+        <Scene />
+    </Canvas>
+</main>
