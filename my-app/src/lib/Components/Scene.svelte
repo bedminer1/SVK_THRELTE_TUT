@@ -1,13 +1,19 @@
 <script lang="ts">
-    import { T } from '@threlte/core'
+    import { T, useTask } from '@threlte/core'
     import { interactivity } from '@threlte/extras'
     import { spring } from 'svelte/motion'
 
     interactivity()
     const scale = spring([1,1,1])
+
+    let rotation = 0
+    useTask((delta) => { // delta is time since last frame
+        rotation += delta
+    })
 </script>
 
 <T.Mesh 
+    rotation.y={rotation}
     position={[0,0,0]}
     scale={$scale}
     on:pointerenter={() => scale.set([2,0.5,2])}
